@@ -1,0 +1,123 @@
+﻿@model Marsa.Models.AnnonceModel
+<head>
+    <link href="@Url.Content("~/Content/image-viewer.css")" rel="stylesheet" type="text/css" />
+</head>
+
+<section class="anntop newanntop">
+
+    <div class="details-top-container">
+        <div class="details-top">
+            <!-- Slideshow container -->
+            <div class="slideshow-container" style="height:400px">
+
+                <!-- Full-width images with number and caption text -->
+                @{
+                    var count = Model.GetPhotos().Length;
+                    int index = 1;
+                    foreach (var item in Model.GetPhotos())
+                    {
+                        <div class="mySlides fade">
+                            <div class="numbertext">@index / @count</div>
+                            <img src="@Url.Content("~/Photos/"+Model.Id+"_" + item)" class="image"/>
+                            <div class="text"></div>
+                        </div>
+                        index++;
+                    }
+                    index = 1;
+                }
+
+
+
+                <!-- Next and previous buttons -->
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <br>
+
+            <!-- The dots/circles -->
+            <div style="text-align:center">
+                @{
+                        foreach (var item in Model.GetPhotos())
+                        {
+                            <span class="dot" onclick="currentSlide(@index)"></span>
+                        }
+                }
+            </div>
+
+            <div>
+                <div class="styles_adDetails__1qVAk">
+                    <h3 class="title">@Model.Title</h3>
+                    <div class="price-phone-container">
+                        <span class="price">@Model.Price</span>
+
+                    </div>
+                </div>
+                <span class="date">15/06/2020 à 15:04</span>
+            </div>
+        </div>
+
+        <div class="details-top-right">
+            <h3>@Model.Pseudo</h3>
+            <hr />
+            <div class="details-top-right-container">
+                <div class="phone-container">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="22" viewBox="0 0 24 24" width="22">
+                        <path d="M0 0h24v24H0z" fill="none" />
+                        <path fill="white" d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+                    </svg>
+                    <a href="tel:@Model.PhoneNumber" class="phonetext">@Model.PhoneNumber</a>
+                </div>
+                <div>
+                    <img src="~/img/baseline_location_on_black_18dp.png" />
+                    <span>@Model.City</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="description">
+        <h3>Description</h3><div>
+            <div class="styles_Description__3Svyk" data-qa-id="adview_description_container">
+                <div class="description-container">
+                    <span class="_1fFkI">
+                          @Model.Description
+                        </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts{
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        // Next/previous controls
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        // Thumbnail image controls
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+    </script>
+
+}

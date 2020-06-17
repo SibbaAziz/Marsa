@@ -1,0 +1,195 @@
+﻿
+@model Marsa.Core.Models.Annonce
+
+<div class="uneannonce">
+    <h1>Déposer une annonce</h1>
+    <hr>
+
+    @using (Html.BeginForm("Add", "Annonce", FormMethod.Post, new
+    {
+        enctype = "multipart/form-data",
+        @class = "dropzone",
+        id = "dropzone-form"
+    }))
+    {
+        <!-- ANNONCE TOP-->
+        <section class="anntop">
+            <h2>Votre annonce</h2>
+
+
+            <label for="categorie">Catégorie *</label>
+            <select id="categorie"><option>Choisissez une catégorie</option></select>
+
+            <label for="particulier">Vous êtes un *</label>
+            <input type="radio" name="particulier" id="particulier" /> Particulier
+            <input type="radio" name="particulier" /> Professionnel
+
+            <label for="demande">Type d'annonce *</label>
+            <input type="radio" id="demande" name="demande" /> Offres
+            <input type="radio" value="demande" name="demande" /> Demandes
+
+
+
+            <label for="titre">Titre de l'annonce *</label>
+            @Html.TextBoxFor(m => m.Title, new { @class = "cellule" })
+
+            <label for="texte">Texte de l'annonce *</label>
+            @Html.TextAreaFor(m => m.Description, new { @rows = 8, @cols = 30 })
+
+
+            <label for="prix">Prix</label>
+            @Html.TextBoxFor(m => m.Price, new { @placeholder = "MRU", @class = "cellule" })
+
+
+            <p>Photos : Une annonce avec photo est 7 fois plus consultée qu'une annonce sans photo</p>
+
+
+            <label style="margin-bottom:10px">
+                <input type="file" multiple class="hidden-accessible   js-file-input" name="file">
+                <span class="button">
+                    Ajouter des images
+                </span>
+                <span class="js-file-input-display">Aucun fichier sélectionné.</span>
+            </label>
+
+
+        </section>
+        <!-- ANNONCE TOP-->
+        <!-- ANNONCE MIDDLE -->
+        <section class="annmiddle">
+            <h2>Localisation</h2>
+            <label for="ville">Ville ou code postal *</label>
+            <div class="cible">
+                @Html.TextBoxFor(m => m.City, new { @class="cellule positablette" })
+                @*<input class="cellule positablette" type="text" name="ville" id="ville">*@
+            </div>
+
+
+            <label for="adresse">Adresse</label>
+            @Html.TextBoxFor(m => m.Address, new { @class="cellule positablette2", placeholder="Voie ou numéro + voie" })
+            @*<input class="cellule positablette2" type="text" name="adresse" id="adresse" placeholder="Voie ou numéro + voie">*@
+            @*<button type="button" name="button">Valider mon adresse</button>
+            <p>
+                Complétez votre adresse et les personnes utilisant la recherche autour de soi trouveront plus facilement votre annonce. Si vous ne souhaitez pas renseigner votre adresse exacte, indiquez votre rue sans donner le numéro. Cette information ne
+                sera conservée que le temps de la publication de votre annonce.
+            </p>
+            <figure>
+                <img class="notablette" src="img/carte.png" alt="map">
+            </figure>*@
+        </section>
+        <!-- ANNONCE MIDDLE -->
+        <!-- ANNONCE BOTTOM -->
+        <section class="annbottom">
+            <h2>Vos infomations</h2>
+            <label for="pseudo">Pseudo *</label>
+            @Html.TextBoxFor(m => m.Pseudo, new { @class="cellule"})
+            <label for="email">Email *</label>
+            @Html.TextBoxFor(m => m.Email, new { @class="cellule" })
+            <label for="téléphone">Téléphone *</label>
+            @Html.TextBoxFor(m => m.PhoneNumber, new { @class="cellule", type="tel" })
+            <input class="check" type="checkbox" name="telephone">
+            <p>Masquer le numéro de téléphone dans l'annonce.</p>
+            <input class="check" type="checkbox" name="telephone">
+            <p>Je ne souhaite pas être sollicité par des sociétés étrangères au site leboncoin.fr</p>
+        </section>
+        <!-- ANNONCE BOTTOM -->
+
+
+        <p class="champs">Champs obligatoires *</p>
+        <button class="validerbutton" type="submit" name="button">Valider</button>
+    }
+
+</div>
+
+
+@section scripts{
+
+
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script>
+        window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')
+    </script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        $(document).on('change', ".image-upload input[type='file']", function () {
+            if ($(this).val()) {
+
+                var filename = $(this).val().split("\\");
+
+                filename = filename[filename.length - 1];
+
+                $('#upload-image').hide();
+                $('#upload-ok').show();
+            }
+        });
+    </script>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+        (function (b, o, i, l, e, r) {
+            b.GoogleAnalyticsObject = l;
+            b[l] || (b[l] =
+                function () {
+                    (b[l].q = b[l].q || []).push(arguments)
+                });
+            b[l].l = +new Date;
+            e = o.createElement(i);
+            r = o.getElementsByTagName(i)[0];
+            e.src = 'https://www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e, r)
+        }(window, document, 'script', 'ga'));
+        ga('create', 'UA-XXXXX-X', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+
+    <script>
+        (function ($) {
+            'use strict';
+
+            $(function () {
+                $('.js-file-input').each(function () {
+                    var $thisInput = $(this),
+                        $inputDisplay = $thisInput.siblings('.js-file-input-display');
+
+                    $thisInput.off('change.fileInput');
+
+                    if (!$inputDisplay.length) return;
+
+                    var inputOriginalText = $inputDisplay.text();
+
+                    $thisInput.on('change.fileInput', function () {
+                        var fileName;
+
+                        // If browser supports File API
+                        if (this.files) {
+                            if (this.files.length) {
+                                fileName = Array.prototype.slice.call(this.files, 0)
+                                    .map(function (fileObj) {
+                                        return fileObj.name;
+                                    }).
+                                    join(', ');
+                            }
+                        } else {
+                            var val = $(this).val();
+
+                            if (val) {
+                                var splitVal = val.split('\\');
+                                fileName = splitVal[splitVal.length - 1];
+                            }
+                        }
+
+                        if (fileName) {
+                            $inputDisplay.text(fileName);
+                        } else {
+                            $inputDisplay.text(inputOriginalText);
+                        }
+                    });
+                });
+            });
+        })(jQuery);
+    </script>
+
+}

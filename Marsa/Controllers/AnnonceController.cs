@@ -34,6 +34,7 @@ namespace Marsa.Controllers
 
                         }
                     }
+                    annonce.Date = DateTime.Now;
                     db.Annonces.Add(annonce);
                     db.SaveChanges();
                     return View("Success");

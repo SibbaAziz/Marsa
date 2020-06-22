@@ -13,70 +13,86 @@
     }))
     {
         <!-- ANNONCE TOP-->
-        <section class="anntop">
-            <h2>Votre annonce</h2>
+<section class="anntop">
+    <h2>Votre annonce</h2>
 
 
-            <label for="categorie">Catégorie *</label>
-            <select id="categorie"><option>Choisissez une catégorie</option></select>
+    <label for="categorie">Catégorie *</label>
+    @{
+        List<SelectListItem> categories = new List<SelectListItem>();
+        categories.Add(new SelectListItem
+        {
+            Text = "Voitures",
+            Value = "Voitures"
+        });
+        categories.Add(new SelectListItem
+        {
+            Text = "Location",
+            Value = "Location",
+            Selected = true
+        });
+        categories.Add(new SelectListItem
+        {
+            Text = "Autre",
+            Value = "Autre"
+        });
+    }
 
-            <label for="particulier">Vous êtes un *</label>
-            <input type="radio" name="particulier" id="particulier" /> Particulier
-            <input type="radio" name="particulier" /> Professionnel
+    @Html.DropDownListFor(model => model.Category, categories, "Choisissez une catégorie")
+  
 
-            <label for="demande">Type d'annonce *</label>
-            <input type="radio" id="demande" name="demande" /> Offres
-            <input type="radio" value="demande" name="demande" /> Demandes
+    <label for="particulier">Vous êtes un *</label>
+    <input type="radio" name="particulier" id="particulier" /> Particulier
+    <input type="radio" name="particulier" /> Professionnel
 
-
-
-            <label for="titre">Titre de l'annonce *</label>
-            @Html.TextBoxFor(m => m.Title, new { @class = "cellule" })
-
-            <label for="texte">Texte de l'annonce *</label>
-            @Html.TextAreaFor(m => m.Description, new { @rows = 8, @cols = 30 })
-
-
-            <label for="prix">Prix</label>
-            @Html.TextBoxFor(m => m.Price, new { @placeholder = "MRU", @class = "cellule" })
-
-
-            <p>Photos : Une annonce avec photo est 7 fois plus consultée qu'une annonce sans photo</p>
-
-
-            <label style="margin-bottom:10px">
-                <input type="file" multiple class="hidden-accessible   js-file-input" name="file">
-                <span class="button">
-                    Ajouter des images
-                </span>
-                <span class="js-file-input-display">Aucun fichier sélectionné.</span>
-            </label>
+    <label for="demande">Type d'annonce *</label>
+    <input type="radio" id="demande" name="demande" /> Offres
+    <input type="radio" value="demande" name="demande" /> Demandes
 
 
-        </section>
+
+    <label for="titre">Titre de l'annonce *</label>
+    @Html.TextBoxFor(m => m.Title, new { @class = "cellule" })
+
+    <label for="texte">Texte de l'annonce *</label>
+    @Html.TextAreaFor(m => m.Description, new { @rows = 8, @cols = 30 })
+
+
+    <label for="prix">Prix</label>
+    @Html.TextBoxFor(m => m.Price, new { @placeholder = "MRU", @class = "cellule" })
+
+
+    <p>Photos : Une annonce avec photo est 7 fois plus consultée qu'une annonce sans photo</p>
+
+
+    <label style="margin-bottom:10px">
+        <input type="file" multiple class="hidden-accessible   js-file-input" name="file">
+        <span class="button">
+            Ajouter des images
+        </span>
+        <span class="js-file-input-display">Aucun fichier sélectionné.</span>
+    </label>
+
+
+</section>
         <!-- ANNONCE TOP-->
         <!-- ANNONCE MIDDLE -->
-        <section class="annmiddle">
-            <h2>Localisation</h2>
-            <label for="ville">Ville ou code postal *</label>
-            <div class="cible">
-                @Html.TextBoxFor(m => m.City, new { @class="cellule positablette" })
-                @*<input class="cellule positablette" type="text" name="ville" id="ville">*@
-            </div>
+<section class="annmiddle">
+    <h2>Localisation</h2>
+
+    <label for="region">Region *</label>
+    @Html.DropDownListFor(model => model.Region, new SelectList(Globals.Regions), "Choisissez une catégorie")
+
+    <label for="ville">Ville ou code postal *</label>
+    <div class="cible">
+        @Html.TextBoxFor(m => m.City, new { @class = "cellule positablette" })
+    </div>
 
 
-            <label for="adresse">Adresse</label>
-            @Html.TextBoxFor(m => m.Address, new { @class="cellule positablette2", placeholder="Voie ou numéro + voie" })
-            @*<input class="cellule positablette2" type="text" name="adresse" id="adresse" placeholder="Voie ou numéro + voie">*@
-            @*<button type="button" name="button">Valider mon adresse</button>
-            <p>
-                Complétez votre adresse et les personnes utilisant la recherche autour de soi trouveront plus facilement votre annonce. Si vous ne souhaitez pas renseigner votre adresse exacte, indiquez votre rue sans donner le numéro. Cette information ne
-                sera conservée que le temps de la publication de votre annonce.
-            </p>
-            <figure>
-                <img class="notablette" src="img/carte.png" alt="map">
-            </figure>*@
-        </section>
+    <label for="adresse">Adresse</label>
+    @Html.TextBoxFor(m => m.Address, new { @class = "cellule positablette2", placeholder = "Voie ou numéro + voie" })
+
+</section>
         <!-- ANNONCE MIDDLE -->
         <!-- ANNONCE BOTTOM -->
         <section class="annbottom">

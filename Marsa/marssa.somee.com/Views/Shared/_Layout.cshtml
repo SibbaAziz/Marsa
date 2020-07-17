@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Voursa</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <!-- Add your site or application content here -->
+    <!-- HEADER -->
+    <header>
+        <div>
+            <aside class="mobile nodesktop">
+                <a href="#">MENU</a>
+            </aside>
+
+            <aside class="right">
+                <figure>
+                    <a href="#"><img src="~/img/LogoMakr_0ukRKr.png" alt="logo leboncoin"></a>
+                </figure>
+            </aside>
+
+            <nav class="nomobile yesdesktop">
+                <ul>
+                    <li>
+                        @Html.ActionLink("ACCUEIL", "Index", "Home")
+                    </li>
+                    <li>
+                        @Html.ActionLink("DÉPOSER UNE ANNONCE","Index", "Annonce")
+                    </li>
+                    <li>
+                        @Html.ActionLink("OFFRES", "Index", "offre")
+                    </li>
+                    <li>
+                        <a href="#">DEMANDES</a>
+                    </li>
+                    <li>
+                        <a href="#">MES ANNONCES</a>
+                    </li>
+                    <li>
+                        <a href="#">BOUTIQUES</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <aside class="left nomobile yesdesktop">
+                <button type="button" name="button"><i class="fa fa-user" aria-hidden="true"> </i> Se connecter</button>
+
+            </aside>
+        </div>
+    </header>
+    <div>
+        
+        @RenderBody()
+        <footer>
+            
+            <div class="black nomobile newcontainer">
+                
+
+                <ul>
+                    <li><span>INFORMATIONS LÉGALES</span></li>
+                    <li>
+                        <a href="#">Conditions générales d'utilisation</a>
+                    </li>
+                    <li>
+                        <a href="#">Règle de diffusion</a>
+                    </li>
+                    <li>
+                        <a href="#">Conditions Générales de vente</a>
+                    </li>
+                    <li>
+                        <a href="#">Vie privée et cookies</a>
+                    </li>
+                </ul>
+
+                <ul>
+                    <li><span>PROFESSIONNELS</span></li>
+                    <li>
+                        <a href="#">Publicité</a>
+                    </li>
+                    <li>
+                        <a href="#">Professionnel de l'immobilier</a>
+                    </li>
+                    <li>
+                        <a href="#">Vos recrutements</a>
+                    </li>
+                    <li>
+                        <a href="#">Toutes mes solutions pros</a>
+                    </li>
+                </ul>
+
+                <ul>
+                    <li><span>DES QUESTIONS ?</span></li>
+                    <li>
+                        <a href="#">Aide</a>
+                    </li>
+                    <li>
+                        <a href="#">Nous contacter</a>
+                    </li>
+                    <li><span>VOUS ÊTES À L'ÉTRANGER ?</span></li>
+                    <li><select><option value="pays">France</option></select></li>
+                </ul>
+            </div>
+            <p class="nomobile">Partenaires : Younited Credit - Kudoz - Agriaffaires - MachineryZone - leDénicheur - Swipsi</p>
+
+            <div class="bottom">
+                <span>Voursa 2019 - 2020</span>
+                <article class="social newcontainer">
+                    <h4 class="nomobile"> Retrouvez-nous sur :</h4>
+                    <a class="facebook" href="#"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i></a>
+                    <a class="twitter" href="#"><i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i></a>
+                </article>
+
+            </div>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

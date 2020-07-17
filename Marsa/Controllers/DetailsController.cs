@@ -4,6 +4,7 @@ using System.Web.Mvc;
 
 namespace Marsa.Controllers
 {
+    [Marsa.Authorization.Authorize]
     public class DetailsController : Controller
     {
         // GET: Details

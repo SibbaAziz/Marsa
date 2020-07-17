@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Voursa</title>
@@ -17,12 +17,14 @@
     <header>
         <div>
             <aside class="mobile nodesktop">
-                <a href="#">MENU</a>
+                <a href="javascript:void(0);" onclick="displayMenu()">
+                    <img src="~/img/baseline_menu_black_18dp.png"/>
+                </a>
             </aside>
 
             <aside class="right">
                 <figure>
-                    <a href="#"><img src="~/img/LogoMakr_0ukRKr.png" alt="logo leboncoin"></a>
+                    <a href="#"><img src="~/img/logo.png" alt="logo leboncoin"></a>
                 </figure>
             </aside>
 
@@ -32,7 +34,7 @@
                         @Html.ActionLink("ACCUEIL", "Index", "Home")
                     </li>
                     <li>
-                        @Html.ActionLink("DÉPOSER UNE ANNONCE","Index", "Annonce")
+                        @Html.ActionLink("DÉPOSER UNE ANNONCE", "Index", "Annonce")
                     </li>
                     <li>
                         @Html.ActionLink("OFFRES", "Index", "offre")
@@ -54,14 +56,22 @@
 
             </aside>
         </div>
+
+
     </header>
     <div>
-        
+
+        <div class="mobile-links" id="mobile-links">
+            @Html.ActionLink("ACCUEIL", "Index", "Home")
+            @Html.ActionLink("DÉPOSER UNE ANNONCE", "Index", "Annonce")
+            @Html.ActionLink("OFFRES", "Index", "offre")
+        </div>
+
         @RenderBody()
         <footer>
-            
+
             <div class="black nomobile newcontainer">
-                
+
 
                 <ul>
                     <li><span>INFORMATIONS LÉGALES</span></li>
@@ -103,14 +113,12 @@
                     <li>
                         <a href="#">Nous contacter</a>
                     </li>
-                    <li><span>VOUS ÊTES À L'ÉTRANGER ?</span></li>
-                    <li><select><option value="pays">France</option></select></li>
                 </ul>
             </div>
             <p class="nomobile">Partenaires : Younited Credit - Kudoz - Agriaffaires - MachineryZone - leDénicheur - Swipsi</p>
 
             <div class="bottom">
-                <span>Voursa 2019 - 2020</span>
+                <span>Marssa.net 2019 - 2020</span>
                 <article class="social newcontainer">
                     <h4 class="nomobile"> Retrouvez-nous sur :</h4>
                     <a class="facebook" href="#"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i></a>
@@ -122,7 +130,22 @@
     </div>
 
     @Scripts.Render("~/bundles/jquery")
+
     @Scripts.Render("~/bundles/bootstrap")
+
+        <script>
+            function displayMenu() {
+                var x = document.getElementById("mobile-links");
+                if (x.style.display === "inline-grid") {
+                    x.style.display = "none";
+                } else {
+                    x.style.display = "inline-grid";
+                }
+            }
+        </script>
+    
+
     @RenderSection("scripts", required: false)
+
 </body>
 </html>

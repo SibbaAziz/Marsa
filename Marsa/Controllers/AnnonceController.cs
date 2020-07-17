@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace Marsa.Controllers
 {
+    [Marsa.Authorization.Authorize]
     public class AnnonceController : Controller
     {
         VoursaContext db = new VoursaContext();

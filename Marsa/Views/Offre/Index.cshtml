@@ -1,40 +1,55 @@
 ﻿@model List<Marsa.Models.AnnonceModel>
 @using Newtonsoft.Json;
 @using Marsa.Resources
-
+<link href="~/Content/slider.css" rel="stylesheet" />
 
 <!-- SEARCH AREA -->
-<div class=" nomobile rechercher yesdesktop">
+<div class="rechercher yesdesktop">
     @using (Html.BeginForm("Search", "Offre", FormMethod.Post, new { @class = "rechercher" }))
-    {     
-        <input class="recherche" type="text" name="search" placeholder="Que recherchez-vous? ">
-        <select class="categorie" name="category">
-            <option value="all">Toutes catégories</option>
-            <option value="Voitures">Voitures</option>
-            <option value="Voitures">Location</option>
-            <option value="Voitures">Autre</option>
-        </select>
+    {
+        <input class="recherche" type="text" name="search" value="@ViewBag.Search" placeholder="Que recherchez-vous? ">
+       
+
+        @Html.DropDownList("category", new SelectList(new string[] {"Toutes catégories", "Voitures", "Location", "Autre"}, ViewBag.Category), new {@class = "categorie"})
+
         <button type="submit" name="button" value="submit">RECHERCHER</button>
-        <input type="checkbox" name="recherche" value="search"> <span>Recherche dans le titre uniquement</span>
-        <input type="checkbox" name="recherche" value="search"> <span>Annonces urgentes uniquement</span>
-        @Html.DropDownList("region", new SelectList(Globals.Regions), new { @class = "region"})
-        @*<select class="region" name="region">
-            <option value="">@Regions.nouakchott</option>
-            <option value="region">@Regions.guidimaka</option>
-            <option value="region">@Regions.dakhlet_nouadhibou</option>
-            <option value="region">@Regions.assaba</option>
-            <option value="region">@Regions.adrar</option>
-            <option value="region">@Regions.brakna</option>
-        </select>*@
-        <input class="ville" type="text" name="code" placeholder="Commune">        
+        @*<input type="checkbox" name="recherche" value="search"> <span>Recherche dans le titre uniquement</span>
+        <input type="checkbox" name="recherche" value="search"> <span>Annonces urgentes uniquement</span>*@
+        @Html.DropDownList("region", new SelectList(Globals.Regions, ViewBag.Area), new { @class = "region" })
+
+        <input class="ville" type="text" name="code" placeholder="Commune">
+        <div class="container-slider">
+            <span>Prix</span>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div id="slider-range"></div>
+                </div>
+            </div>
+            <div class="row slider-labels">
+                <span style="display:none" id="initial-min">@ViewBag.MinPrice</span>
+                <span style="display:none" id="initial-max">@ViewBag.MaxPrice</span>
+                <div class="col-xs-6 caption">
+                    <strong>Min:</strong> <span id="slider-range-value1"></span>
+                </div>
+                <div class="col-xs-6 text-right caption">
+                    <strong>Max:</strong> <span id="slider-range-value2"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <input type="hidden" id="min-value" name="minprice" value="@ViewBag.MinPrice">
+                    <input type="hidden" id="max-value" name="maxprice" value="">
+                </div>
+            </div>
+        </div>
     }
-    
+
 </div>
 <!-- END OF THE SEARCH AREA -->
 <!-- CONTAINER & ASIDE -->
 <div class="containeroffre">
-    <h1>Annonces: Ile-de-France</h1>
-    <aside>
+    @*<h1>Annonces: Ile-de-France</h1>*@
+    <aside style="display:none">
         <h2>Annonces à la Une</h2>
         <article>
             <a href="#">
@@ -79,14 +94,14 @@
 
     <div class="galerie">
         <ul>
-            <li><span>Toutes</span><span class="nomobile">4 554 224</span></li>
-            <li><span>Particuliers</span><span class="nomobile">4 299 276</span></li>
-            <li><span>Professionnels</span><span class="nomobile">254 948</span></li>
+            <li><span>Toutes les annoncess</span></li>
+            @*<li><span>Particuliers</span><span class="nomobile">4 299 276</span></li>
+            <li><span>Professionnels</span><span class="nomobile">254 948</span></li>*@
         </ul>
         <select class="date" name="date"><option value="">Trier par: Date</option></select>
 
         @foreach (var item in Model)
-    {
+        {
             <article class="one">
                 <a href="@Url.Action("Index", "Details", new { annonce = JsonConvert.SerializeObject(@item) })">
                     <figure>
@@ -122,31 +137,34 @@
 
 
 
+@section scripts{
+    <script src="~/Scripts/slider.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script>
+        window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')
+    </script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+        (function (b, o, i, l, e, r) {
+            b.GoogleAnalyticsObject = l;
+            b[l] || (b[l] =
+                function () {
+                    (b[l].q = b[l].q || []).push(arguments)
+                });
+            b[l].l = +new Date;
+            e = o.createElement(i);
+            r = o.getElementsByTagName(i)[0];
+            e.src = 'https://www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e, r)
+        }(window, document, 'script', 'ga'));
+    ga('create', 'UA-XXXXX-X', 'auto');
+    ga('send', 'pageview');
+    </script>
 
 
 
-<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-<script>
-    window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')
-</script>
-<script src="js/plugins.js"></script>
-<script src="js/main.js"></script>
-
-<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-<script>
-    (function (b, o, i, l, e, r) {
-        b.GoogleAnalyticsObject = l;
-        b[l] || (b[l] =
-            function () {
-                (b[l].q = b[l].q || []).push(arguments)
-            });
-        b[l].l = +new Date;
-        e = o.createElement(i);
-        r = o.getElementsByTagName(i)[0];
-        e.src = 'https://www.google-analytics.com/analytics.js';
-        r.parentNode.insertBefore(e, r)
-    }(window, document, 'script', 'ga'));
-ga('create', 'UA-XXXXX-X', 'auto');
-ga('send', 'pageview');
-</script>
+}
 

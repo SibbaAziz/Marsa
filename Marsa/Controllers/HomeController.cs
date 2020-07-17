@@ -6,8 +6,29 @@ using System.Web.Mvc;
 
 namespace Marsa.Controllers
 {
+    
     public class HomeController : Controller
     {
+        public ActionResult Register()
+        {
+            return View();
+        }
+
+
+        public ActionResult Login(string name, string password)
+        {
+            Session["User"] = name;
+            Session["Password"] = password;
+
+            if(name == "sidiaziz" && password == "sidiaziz123")
+            {
+                return View("Index");
+            }
+
+            return View("Register");
+        }
+
+        [Marsa.Authorization.Authorize]
         public ActionResult Index()
         {
             return View();

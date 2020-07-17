@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "Register";
+}
+
+<h2>Register</h2>
+
+@using (Html.BeginForm("Login", "Home", FormMethod.Post))
+{
+     <input type="text" name="name"/>
+     <input type="password" name="password" />
+     <input type="submit"/> 
+}
+
+

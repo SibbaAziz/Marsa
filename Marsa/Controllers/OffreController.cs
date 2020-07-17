@@ -7,14 +7,17 @@ using System.Web.Mvc;
 
 namespace Marsa.Controllers
 {
+    [Marsa.Authorization.Authorize]
     public class OffreController : Controller
     {
-        VoursaContext db = new VoursaContext();
+        private readonly VoursaContext db = new VoursaContext();
 
         // GET: Offre
         public ActionResult Index()
         {
             db.Annonces.ToList();
+            ViewBag.MinPrice = 500000;
+            ViewBag.MaxPrice = 1000000;
             return View(db.Annonces.Select(a => new AnnonceModel()
             {
                 Id = a.Id,
@@ -31,7 +34,11 @@ namespace Marsa.Controllers
 
         public ActionResult Area(string area)
         {
-            return View("Index", db.Annonces.Where(a => a.City == area).Select(a => new AnnonceModel()
+            ViewBag.Area = area;
+            ViewBag.MinPrice = 500000;
+            ViewBag.MaxPrice = 1000000;
+            return View("Index", db.Annonces.Where(a => a.City == area)
+                                        .Select(a => new AnnonceModel()
             {
                 Id = a.Id,
                 Photos = a.Photos,
@@ -45,12 +52,21 @@ namespace Marsa.Controllers
 
         }
 
-        public ActionResult Search(string search, string category, string region)
+        public ActionResult Search(string search, string category, string region, int minprice, int maxprice )
         {
+
+
             var result = db.Annonces.Where(a => a.Title.Contains(search) &&
-                                                a.Category == category &&
-                                                a.Region == region)
-                                    .Select(a => new AnnonceModel()
+                                                 a.Region == region &&
+                                                 a.Price >= minprice &&
+                                                 a.Price <= maxprice);
+
+            if(category != "all")
+            {
+                result = result.Where(a => a.Category == category);
+            }
+
+            var finalresult =  result.Select(a => new AnnonceModel()
                                     {
                                         Id = a.Id,
                                         Photos = a.Photos,
@@ -62,7 +78,12 @@ namespace Marsa.Controllers
                                         PhoneNumber = a.PhoneNumber
                                     })
                                     .ToList();
-            return View("Index", result);
+            ViewBag.Search = search;
+            ViewBag.Category = category;
+            ViewBag.Area = region;
+            ViewBag.MinPrice = minprice;
+            ViewBag.MaxPrice = maxprice;
+            return View("Index", finalresult);
         }
     }
 }

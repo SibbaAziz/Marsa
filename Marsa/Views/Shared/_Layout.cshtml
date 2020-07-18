@@ -56,7 +56,7 @@
 
 
     </header>
-    <div>
+    <div class="body-container">
 
         <div class="mobile-links" id="mobile-links">
             @Html.ActionLink("ACCUEIL", "Index", "Home")
@@ -65,8 +65,10 @@
             @Html.ActionLink("العربية", "SetLanguage", "Home", new { language = "ar" }, null)
             @Html.ActionLink("Français", "SetLanguage", "Home", new { language = "auto" }, null)            
         </div>
+        <div class="body">
 
-        @RenderBody()
+            @RenderBody()
+        </div>
         <footer>
 
             @*<div class="black nomobile newcontainer">

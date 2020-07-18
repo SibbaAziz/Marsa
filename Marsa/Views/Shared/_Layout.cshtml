@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Voursa</title>
+    <title>Marssa</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
@@ -40,21 +40,18 @@
                         @Html.ActionLink("OFFRES", "Index", "offre")
                     </li>
                     <li>
-                        <a href="#">DEMANDES</a>
+                        @Html.ActionLink("العربية", "SetLanguage", "Home", new { language = "ar"}, null)
                     </li>
                     <li>
-                        <a href="#">MES ANNONCES</a>
-                    </li>
-                    <li>
-                        <a href="#">BOUTIQUES</a>
+                        @Html.ActionLink("Français", "SetLanguage", "Home", new { language = "auto" }, null)
                     </li>
                 </ul>
             </nav>
 
-            <aside class="left nomobile yesdesktop">
+            @*<aside class="left nomobile yesdesktop">
                 <button type="button" name="button"><i class="fa fa-user" aria-hidden="true"> </i> Se connecter</button>
 
-            </aside>
+            </aside>*@
         </div>
 
 
@@ -64,7 +61,9 @@
         <div class="mobile-links" id="mobile-links">
             @Html.ActionLink("ACCUEIL", "Index", "Home")
             @Html.ActionLink("DÉPOSER UNE ANNONCE", "Index", "Annonce")
-            @Html.ActionLink("OFFRES", "Index", "offre")
+            @Html.ActionLink("OFFRES", "Index", "offre")            
+            @Html.ActionLink("العربية", "SetLanguage", "Home", new { language = "ar" }, null)
+            @Html.ActionLink("Français", "SetLanguage", "Home", new { language = "auto" }, null)            
         </div>
 
         @RenderBody()

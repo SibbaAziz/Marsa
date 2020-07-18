@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using System.Threading;
 using System.Web;
 using System.Web.Mvc;
 
@@ -12,6 +14,7 @@ namespace Marsa.Controllers
         public ActionResult Register()
         {
             return View();
+
         }
 
 
@@ -32,6 +35,26 @@ namespace Marsa.Controllers
         public ActionResult Index()
         {
             return View();
+        }
+
+        public ActionResult SetLanguage(string language)
+        {
+            
+
+            if(language == "auto")
+            {
+                System.Threading.Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
+                System.Threading.Thread.CurrentThread.CurrentUICulture = CultureInfo.InstalledUICulture;
+            }
+            else
+            {
+                var ar = new System.Globalization.CultureInfo(language);
+                System.Threading.Thread.CurrentThread.CurrentCulture = ar;
+                System.Threading.Thread.CurrentThread.CurrentUICulture = ar;
+
+            }
+
+            return View("Index");
         }
 
         public ActionResult About()

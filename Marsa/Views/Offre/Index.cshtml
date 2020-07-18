@@ -15,7 +15,7 @@
         <button type="submit" name="button" value="submit">RECHERCHER</button>
         @*<input type="checkbox" name="recherche" value="search"> <span>Recherche dans le titre uniquement</span>
         <input type="checkbox" name="recherche" value="search"> <span>Annonces urgentes uniquement</span>*@
-        @Html.DropDownList("region", new SelectList(Globals.Regions, ViewBag.Area), new { @class = "region" })
+        @Html.DropDownList("region", new SelectList(Marsa.Globals.Regions, ViewBag.Area), new { @class = "region" })
 
         <input class="ville" type="text" name="code" placeholder="Commune">
         <div class="container-slider">

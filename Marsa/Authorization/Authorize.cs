@@ -18,14 +18,15 @@ namespace Marsa.Authorization
             }
 
             return;
-            //filterContext.Result = new RedirectToRouteResult
-            //        (new System.Web.Routing.RouteValueDictionary
-            //        (new
-            //        {
-            //            controller = "Home",
-            //            action = "Register",
-            //        }
-            //        ));
+
+            filterContext.Result = new RedirectToRouteResult
+                    (new System.Web.Routing.RouteValueDictionary
+                    (new
+                    {
+                        controller = "Home",
+                        action = "Register",
+                    }
+                    ));
         }
 
         public void OnAuthenticationChallenge(AuthenticationChallengeContext filterContext)

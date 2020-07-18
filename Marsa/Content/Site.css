@@ -427,7 +427,7 @@ header {
     }
 
 .mobile {
-    margin-top: 1.5em;
+    margin-top: 1.2em;
     margin-left: 1em;
 }
 
@@ -932,14 +932,11 @@ hr {
 
             .container section a {
                 padding: 2.5%;
-                width: 70%;
             }
 
             .container section h2 {
-                margin-left: 1em;
-                margin-bottom: 4em;
-                width: 70%;
-                text-align: left;
+                
+                text-align: center;
             }
         /*CONTAINER & ASIDE*/
         /*MAPS*/
@@ -1070,7 +1067,7 @@ hr {
     }
 
     header nav {
-        width: 70%;
+        width: 84%;
     }
 
     header ul {

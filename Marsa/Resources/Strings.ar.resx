@@ -121,6 +121,9 @@
     <value>انشر إعلانك</value>
   </data>
   <data name="msg" xml:space="preserve">
-    <value>اهلا بكم في موقع مرصه</value>
+    <value>اهلا بكم في موقع مرصة لإعلانات البيع و الشراء</value>
+  </data>
+  <data name="title" xml:space="preserve">
+    <value>مرصة</value>
   </data>
 </root>

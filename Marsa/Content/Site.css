@@ -42,7 +42,7 @@ html {
 }
 
     .mobile-links a {
-        padding: 7px 15px;
+        padding: 11px 15px;
         color: white;
         font-size: small;
     }
@@ -119,10 +119,10 @@ font-size:small;
 .details-top-right {
     float: right;
     margin-left: 5px;
-    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
     height: fit-content;
     width: 30%;
     padding: 1em 8px;
+    border:dashed;
 }
 
 .offre-small-text{
@@ -133,10 +133,31 @@ font-size:small;
     
 }
 
+.offre-bottom{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    font-size:small;
+}
 
+.offre-price{
+    font-weight:bold;
+}
+
+.city{
+    float:left;
+}
+
+.annonces-a-la-une{
+    display:initial;
+}
+
+.offre-date{
+    float:right;
+}
 
 .price {
-    font-size: xx-large;
+    font-size: x-large;
     color: #1b5e20;
     font-weight: bold;
 }
@@ -259,7 +280,7 @@ textarea {
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Open Sans', sans-serif;
+    font-family: Arial, sans-serif;
 }
 
 .nomobile {
@@ -427,7 +448,7 @@ header {
     }
 
 .mobile {
-    margin-top: 1.2em;
+    margin-top: 0.9em;
     margin-left: 1em;
 }
 
@@ -476,7 +497,7 @@ header {
         }
 
         .container section a {
-            padding: 10%;
+            padding: 3%;
             margin: 0.7em;
             border-radius: 5px;
             text-align: center;
@@ -513,9 +534,7 @@ div #France {
 /*SELECT REGION FOR MOBILE VERSION*/
 
 div select {
-    border: 1px solid #ccc;
     width: 90%;
-    border-radius: 3px;
     overflow: hidden;
     margin: 1em 1em;
 }
@@ -558,10 +577,7 @@ footer {
 
 .bottom {
     width: 100%;
-    height: 60px;
     display: flex;
-    /*justify-content: space-around;*/
-    margin-top: 1em;
 }
 
     .bottom p {
@@ -759,7 +775,7 @@ hr {
 
 .containeroffre aside {
     border: 1px solid orange;
-    width: 95%;
+    width: 90%;
     margin: auto;
 }
 
@@ -767,9 +783,9 @@ hr {
     font-size: 16px;
     text-align: center;
     background-color: #1b5e20;
-    height: 2.5em;
     color: white;
     font-weight: 400;
+    padding:1em;
 }
 
 .containeroffre article {
@@ -808,10 +824,9 @@ hr {
 /*GALERIE*/
 
 .galerie {
-    border: 1px solid grey;
-    width: 90%;
     margin: auto;
     margin-top: 1em;
+    width: 90%;
 }
 
     .galerie ul {
@@ -839,10 +854,13 @@ hr {
         .galerie .one a, .two a, .three a {
             display: flex;
             color: #3873bd;
+            width:100%
         }
 
         .one section, .two section, .three section {
-            margin: auto;
+            margin: 10px;
+            position:relative;
+            width:100%;
         }
 
         .one h3, .two h3, .three h3 {
@@ -860,9 +878,9 @@ hr {
         }
 
     .galerie article figure img {
-        width: 100px;
+        width: 133px;
         height: 133px;
-        object-fit:cover;
+        object-fit:fill;
     }
 
 
@@ -1023,18 +1041,19 @@ hr {
     .containeroffre {
         display: flex;
         flex-direction: row-reverse;
-        width: 100%;
+        width: 90%;
+        margin:auto;
     }
 
         .containeroffre aside {
             width: 30%;
             margin: auto;
-            margin-top: 0;
             margin-top: 1em;
+            margin-left:10px;
         }
 
         .containeroffre .galerie {
-            /*width: 65%;*/
+            width: 70%;
         }
 
         .containeroffre h1, .containeroffre nav {
@@ -1067,7 +1086,7 @@ hr {
     }
 
     header nav {
-        width: 84%;
+        width: 90%;
     }
 
     header ul {
@@ -1077,7 +1096,7 @@ hr {
         header ul li {
             display: inline-block;
             margin-left: 2em;
-            margin-top: 1.8em;
+            margin-top: 1.4em;
         }
 
     header div {
@@ -1226,7 +1245,6 @@ hr {
 /*BARRE DE RECHERCHE*/
 
 .rechercher {
-    background-color: #f2f2f2;
     width: 100%;
     margin: auto;
 }
@@ -1237,11 +1255,12 @@ hr {
 
 .recherche {
     width: 50%;
-    height: 40px;
+    height: 35px;
 }
 
 .categorie {
     width: 25%;
+    height: 35px;
 }
 
 .rechercher button {
@@ -1249,16 +1268,17 @@ hr {
     background-color: #4c94ef;
     color: white;
     height: 40px;
-    border-radius: 5px;
+    border:hidden;
 }
 
 .region {
     width: 25%;
+    height: 35px;
 }
 
 .ville {
     width: 25%;
-    height: 40px;
+    height: 35px;
 }
 
 
@@ -1448,11 +1468,12 @@ hr {
 
     .details-top-right {
         float:initial;
-        box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+        /*box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);*/
         height: fit-content;
         width: auto;
         padding: 8px;
         margin-left:0px;
+        border-width:thin;
     }
 
     .newanntop {
@@ -1474,7 +1495,7 @@ hr {
     }
 
     .recherche {
-        width: 100%;
+        width: 99%;
     }
 
     .rechercher button {
@@ -1494,6 +1515,20 @@ hr {
     }
 
     .ville {
-        width: 100%;
+        width: 99%;
+    }
+
+    .galerie article figure img {
+        width: 100px;
+        height: 100px;
+        object-fit: fill;
+    }
+
+    .offre-small-text {
+        font-size: xx-small;
+    }
+
+    .annonces-a-la-une {
+        display: none;
     }
 }

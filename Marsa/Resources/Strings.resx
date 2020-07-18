@@ -123,4 +123,7 @@
   <data name="msg" xml:space="preserve">
     <value>Trouvez la bonne affaire sur Marssa.</value>
   </data>
+  <data name="title" xml:space="preserve">
+    <value>Marssa</value>
+  </data>
 </root>

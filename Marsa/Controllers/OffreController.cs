@@ -15,7 +15,7 @@ namespace Marsa.Controllers
         // GET: Offre
         public ActionResult Index()
         {
-            db.Annonces.ToList();
+            //db.Annonces.ToList();
             ViewBag.MinPrice = 500000;
             ViewBag.MaxPrice = 1000000;
             return View(db.Annonces.Select(a => new AnnonceModel()
@@ -27,7 +27,8 @@ namespace Marsa.Controllers
                 City = a.City,
                 Pseudo = a.Pseudo,
                 Description = a.Description,
-                PhoneNumber = a.PhoneNumber
+                PhoneNumber = a.PhoneNumber,
+                Date = a.Date
             }).ToList());
            
         }
@@ -47,7 +48,8 @@ namespace Marsa.Controllers
                 City = a.City,
                 Pseudo = a.Pseudo,
                 Description = a.Description,
-                PhoneNumber = a.PhoneNumber
+                PhoneNumber = a.PhoneNumber,
+                Date = a.Date
             }).ToList());
 
         }
@@ -57,11 +59,11 @@ namespace Marsa.Controllers
 
 
             var result = db.Annonces.Where(a => a.Title.Contains(search) &&
-                                                 a.Region == region &&
+                                                 (a.Region == region || a.City == region ) &&
                                                  a.Price >= minprice &&
                                                  a.Price <= maxprice);
 
-            if(category != "all")
+            if(category != "Toutes catégories")
             {
                 result = result.Where(a => a.Category == category);
             }
@@ -75,7 +77,8 @@ namespace Marsa.Controllers
                                         City = a.City,
                                         Pseudo = a.Pseudo,
                                         Description = a.Description,
-                                        PhoneNumber = a.PhoneNumber
+                                        PhoneNumber = a.PhoneNumber,
+                                        Date = a.Date
                                     })
                                     .ToList();
             ViewBag.Search = search;

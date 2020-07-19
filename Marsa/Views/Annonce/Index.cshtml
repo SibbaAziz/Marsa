@@ -103,16 +103,19 @@
             @Html.TextBoxFor(m => m.Email, new { @class="cellule" })
             <label for="téléphone">Téléphone *</label>
             @Html.TextBoxFor(m => m.PhoneNumber, new { @class="cellule", type="tel" })
-            <input class="check" type="checkbox" name="telephone">
+            @*<input class="check" type="checkbox" name="telephone">
             <p>Masquer le numéro de téléphone dans l'annonce.</p>
             <input class="check" type="checkbox" name="telephone">
-            <p>Je ne souhaite pas être sollicité par des sociétés étrangères au site leboncoin.fr</p>
+            <p>Je ne souhaite pas être sollicité par des sociétés étrangères au site leboncoin.fr</p>*@
         </section>
         <!-- ANNONCE BOTTOM -->
 
 
         <p class="champs">Champs obligatoires *</p>
-        <button class="validerbutton" type="submit" name="button">Valider</button>
+        <div class="validation-container">
+            <button class="validerbutton" type="submit" name="button">Valider</button>
+        </div>
+        
     }
 
 </div>

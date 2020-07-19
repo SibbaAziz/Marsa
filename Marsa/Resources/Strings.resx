@@ -117,13 +117,115 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="accueil" xml:space="preserve">
+    <value>ACCUEIL</value>
+  </data>
+  <data name="adresse" xml:space="preserve">
+    <value>Adresse</value>
+  </data>
+  <data name="ajouterPhotos" xml:space="preserve">
+    <value>Ajouter des images</value>
+  </data>
+  <data name="annoncesAlaUne" xml:space="preserve">
+    <value>Annonces à la Une</value>
+  </data>
+  <data name="aucunFichierSelectionne" xml:space="preserve">
+    <value>Aucun fichier sélectionné.</value>
+  </data>
+  <data name="autre" xml:space="preserve">
+    <value>Autre</value>
+  </data>
+  <data name="categorie" xml:space="preserve">
+    <value>Catégorie</value>
+  </data>
+  <data name="champsObligatoires" xml:space="preserve">
+    <value>Champs obligatoires</value>
+  </data>
+  <data name="choisissezRegion" xml:space="preserve">
+    <value>Choisissez une région</value>
+  </data>
+  <data name="choisissezVotreCategorie" xml:space="preserve">
+    <value>Choisissez une catégorie</value>
+  </data>
+  <data name="commune" xml:space="preserve">
+    <value>Commune</value>
+  </data>
   <data name="deposerAnnonce" xml:space="preserve">
     <value>Déposer une annonce</value>
+  </data>
+  <data name="description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="imageInfo" xml:space="preserve">
+    <value>Photos : Une annonce avec photo est 7 fois plus consultée qu'une annonce sans photo</value>
+  </data>
+  <data name="localisation" xml:space="preserve">
+    <value>Localisation</value>
+  </data>
+  <data name="location" xml:space="preserve">
+    <value>Location</value>
   </data>
   <data name="msg" xml:space="preserve">
     <value>Trouvez la bonne affaire sur Marssa.</value>
   </data>
+  <data name="offres" xml:space="preserve">
+    <value>OFFRES</value>
+  </data>
+  <data name="prix" xml:space="preserve">
+    <value>Prix</value>
+  </data>
+  <data name="pseudo" xml:space="preserve">
+    <value>Pseudo</value>
+  </data>
+  <data name="queCherchezVous" xml:space="preserve">
+    <value>Que recherchez-vous ?</value>
+  </data>
+  <data name="rechercher" xml:space="preserve">
+    <value>RECHERCHER</value>
+  </data>
+  <data name="region" xml:space="preserve">
+    <value>Région</value>
+  </data>
+  <data name="tel" xml:space="preserve">
+    <value>Téléphone</value>
+  </data>
+  <data name="texteAnnonce" xml:space="preserve">
+    <value>Texte de l'annonce</value>
+  </data>
   <data name="title" xml:space="preserve">
     <value>Marssa</value>
+  </data>
+  <data name="titreAnnonce" xml:space="preserve">
+    <value>Titre de l'annonce</value>
+  </data>
+  <data name="toutesAnnonces" xml:space="preserve">
+    <value>Toutes les annonces</value>
+  </data>
+  <data name="toutesCategories" xml:space="preserve">
+    <value>Toutes catégories</value>
+  </data>
+  <data name="uniteMonnaie" xml:space="preserve">
+    <value>MRO</value>
+  </data>
+  <data name="valider" xml:space="preserve">
+    <value>Valider</value>
+  </data>
+  <data name="villeCodePostal" xml:space="preserve">
+    <value>Ville ou code postal</value>
+  </data>
+  <data name="voie" xml:space="preserve">
+    <value>Voie ou numéro + voie</value>
+  </data>
+  <data name="voitures" xml:space="preserve">
+    <value>Voitures</value>
+  </data>
+  <data name="vosInformations" xml:space="preserve">
+    <value>Vos infomations</value>
+  </data>
+  <data name="votre-annonce" xml:space="preserve">
+    <value>Votre annonce</value>
   </data>
 </root>

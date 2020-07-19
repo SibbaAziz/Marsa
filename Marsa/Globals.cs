@@ -1,7 +1,17 @@
-﻿namespace Marsa
+﻿using System.Collections.Generic;
+
+namespace Marsa
 {
     public static class Globals
     {
+        public static Dictionary<string, string> Categories = new Dictionary<string, string>()
+        {
+            { "جميع الفئات", "Toutes catégories" },
+            { "سيارات", "Voitures" },
+            { "تأجير", "Location" },
+            { "فئة أخرى", "Location" }
+        };
+
         public static string[] Regions = new string[] 
         {
             Resources.Regions.nouakchott,

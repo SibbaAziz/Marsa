@@ -1,4 +1,5 @@
-﻿using Marsa.Models;
+﻿using Marsa.Localization;
+using Marsa.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +9,7 @@ using System.Web.Mvc;
 namespace Marsa.Controllers
 {
     [Marsa.Authorization.Authorize]
+    [OnStart]
     public class OffreController : Controller
     {
         private readonly VoursaContext db = new VoursaContext();
@@ -56,16 +58,25 @@ namespace Marsa.Controllers
 
         public ActionResult Search(string search, string category, string region, int minprice, int maxprice )
         {
+            var translateCategory = string.Empty;
 
+            if (Globals.Categories.ContainsKey(category))
+            {
+                translateCategory = Globals.Categories[category];
+            }
+            else
+            {
+                translateCategory = category;
+            }
 
             var result = db.Annonces.Where(a => a.Title.Contains(search) &&
                                                  (a.Region == region || a.City == region ) &&
                                                  a.Price >= minprice &&
                                                  a.Price <= maxprice);
 
-            if(category != "Toutes catégories")
+            if(translateCategory != "Toutes catégories")
             {
-                result = result.Where(a => a.Category == category);
+                result = result.Where(a => a.Category == translateCategory);
             }
 
             var finalresult =  result.Select(a => new AnnonceModel()

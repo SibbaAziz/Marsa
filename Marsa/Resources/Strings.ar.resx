@@ -117,13 +117,115 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="accueil" xml:space="preserve">
+    <value>الصفحة الرئيسية</value>
+  </data>
+  <data name="adresse" xml:space="preserve">
+    <value>عنوان</value>
+  </data>
+  <data name="ajouterPhotos" xml:space="preserve">
+    <value>أضف الصور</value>
+  </data>
+  <data name="annoncesAlaUne" xml:space="preserve">
+    <value>إعلانات مميزة</value>
+  </data>
+  <data name="aucunFichierSelectionne" xml:space="preserve">
+    <value>لم يتم اختيار اي ملف</value>
+  </data>
+  <data name="autre" xml:space="preserve">
+    <value>فئة أخرى</value>
+  </data>
+  <data name="categorie" xml:space="preserve">
+    <value>الفئة</value>
+  </data>
+  <data name="champsObligatoires" xml:space="preserve">
+    <value>الحقول المطلوبة</value>
+  </data>
+  <data name="choisissezRegion" xml:space="preserve">
+    <value>اختر المنطقة</value>
+  </data>
+  <data name="choisissezVotreCategorie" xml:space="preserve">
+    <value>اختر فئة</value>
+  </data>
+  <data name="commune" xml:space="preserve">
+    <value>بلدية</value>
+  </data>
   <data name="deposerAnnonce" xml:space="preserve">
     <value>انشر إعلانك</value>
+  </data>
+  <data name="description" xml:space="preserve">
+    <value>وصف الإعلان</value>
+  </data>
+  <data name="email" xml:space="preserve">
+    <value>البريد الإلكتروني</value>
+  </data>
+  <data name="imageInfo" xml:space="preserve">
+    <value>الصور: يتم عرض الإعلان الذي يحتوي على صورة 7 مرات أكثر من الإعلان الذي لا يحتوي على صورة</value>
+  </data>
+  <data name="localisation" xml:space="preserve">
+    <value>موقعك</value>
+  </data>
+  <data name="location" xml:space="preserve">
+    <value>تأجير</value>
   </data>
   <data name="msg" xml:space="preserve">
     <value>اهلا بكم في موقع مرصة لإعلانات البيع و الشراء</value>
   </data>
+  <data name="offres" xml:space="preserve">
+    <value>عروض</value>
+  </data>
+  <data name="prix" xml:space="preserve">
+    <value>السعر</value>
+  </data>
+  <data name="pseudo" xml:space="preserve">
+    <value>مستعار</value>
+  </data>
+  <data name="queCherchezVous" xml:space="preserve">
+    <value>عما تبحث ؟</value>
+  </data>
+  <data name="rechercher" xml:space="preserve">
+    <value>بحث</value>
+  </data>
+  <data name="region" xml:space="preserve">
+    <value>منطقة</value>
+  </data>
+  <data name="tel" xml:space="preserve">
+    <value>هاتف</value>
+  </data>
+  <data name="texteAnnonce" xml:space="preserve">
+    <value>نص الإعلان</value>
+  </data>
   <data name="title" xml:space="preserve">
     <value>مرصة</value>
+  </data>
+  <data name="titreAnnonce" xml:space="preserve">
+    <value>عنوان الاعلان</value>
+  </data>
+  <data name="toutesAnnonces" xml:space="preserve">
+    <value>جميع الإعلانات</value>
+  </data>
+  <data name="toutesCategories" xml:space="preserve">
+    <value>جميع الفئات</value>
+  </data>
+  <data name="uniteMonnaie" xml:space="preserve">
+    <value>أوقية جديدة</value>
+  </data>
+  <data name="valider" xml:space="preserve">
+    <value>أرسل</value>
+  </data>
+  <data name="villeCodePostal" xml:space="preserve">
+    <value>المدينة أو الرمز البريدي</value>
+  </data>
+  <data name="voie" xml:space="preserve">
+    <value>حارة أو رقم + حارة</value>
+  </data>
+  <data name="voitures" xml:space="preserve">
+    <value>سيارات</value>
+  </data>
+  <data name="vosInformations" xml:space="preserve">
+    <value>معلوماتكم</value>
+  </data>
+  <data name="votre-annonce" xml:space="preserve">
+    <value>إعلانك</value>
   </data>
 </root>

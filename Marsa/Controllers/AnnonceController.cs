@@ -1,4 +1,5 @@
 ﻿using Marsa.Core.Models;
+using Marsa.Localization;
 using System;
 using System.IO;
 using System.Web;
@@ -7,6 +8,7 @@ using System.Web.Mvc;
 namespace Marsa.Controllers
 {
     [Marsa.Authorization.Authorize]
+    [OnStart]
     public class AnnonceController : Controller
     {
         VoursaContext db = new VoursaContext();

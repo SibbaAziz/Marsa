@@ -31,13 +31,13 @@
             <nav class="nomobile yesdesktop">
                 <ul>
                     <li>
-                        @Html.ActionLink("ACCUEIL", "Index", "Home")
+                        @Html.ActionLink(Resources.Strings.accueil, "Index", "Home")
                     </li>
                     <li>
-                        @Html.ActionLink("DÉPOSER UNE ANNONCE", "Index", "Annonce")
+                        @Html.ActionLink(Resources.Strings.deposerAnnonce.ToUpper(), "Index", "Annonce")
                     </li>
                     <li>
-                        @Html.ActionLink("OFFRES", "Index", "offre")
+                        @Html.ActionLink(Resources.Strings.offres, "Index", "offre")
                     </li>
                     <li>
                         @Html.ActionLink("العربية", "SetLanguage", "Home", new { language = "ar"}, null)
@@ -59,9 +59,9 @@
     <div class="body-container">
 
         <div class="mobile-links" id="mobile-links">
-            @Html.ActionLink("ACCUEIL", "Index", "Home")
-            @Html.ActionLink("DÉPOSER UNE ANNONCE", "Index", "Annonce")
-            @Html.ActionLink("OFFRES", "Index", "offre")            
+            @Html.ActionLink(Resources.Strings.accueil, "Index", "Home")
+            @Html.ActionLink(Resources.Strings.deposerAnnonce.ToUpper(), "Index", "Annonce")
+            @Html.ActionLink(Resources.Strings.offres, "Index", "offre")            
             @Html.ActionLink("العربية", "SetLanguage", "Home", new { language = "ar" }, null)
             @Html.ActionLink("Français", "SetLanguage", "Home", new { language = "auto" }, null)            
         </div>

@@ -61,11 +61,155 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à ACCUEIL.
+        /// </summary>
+        public static string accueil {
+            get {
+                return ResourceManager.GetString("accueil", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Adresse.
+        /// </summary>
+        public static string adresse {
+            get {
+                return ResourceManager.GetString("adresse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Ajouter des images.
+        /// </summary>
+        public static string ajouterPhotos {
+            get {
+                return ResourceManager.GetString("ajouterPhotos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Annonces à la Une.
+        /// </summary>
+        public static string annoncesAlaUne {
+            get {
+                return ResourceManager.GetString("annoncesAlaUne", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Aucun fichier sélectionné..
+        /// </summary>
+        public static string aucunFichierSelectionne {
+            get {
+                return ResourceManager.GetString("aucunFichierSelectionne", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Autre.
+        /// </summary>
+        public static string autre {
+            get {
+                return ResourceManager.GetString("autre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Catégorie.
+        /// </summary>
+        public static string categorie {
+            get {
+                return ResourceManager.GetString("categorie", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Champs obligatoires.
+        /// </summary>
+        public static string champsObligatoires {
+            get {
+                return ResourceManager.GetString("champsObligatoires", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Choisissez une région.
+        /// </summary>
+        public static string choisissezRegion {
+            get {
+                return ResourceManager.GetString("choisissezRegion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Choisissez une catégorie.
+        /// </summary>
+        public static string choisissezVotreCategorie {
+            get {
+                return ResourceManager.GetString("choisissezVotreCategorie", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Commune.
+        /// </summary>
+        public static string commune {
+            get {
+                return ResourceManager.GetString("commune", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Déposer une annonce.
         /// </summary>
         public static string deposerAnnonce {
             get {
                 return ResourceManager.GetString("deposerAnnonce", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Description.
+        /// </summary>
+        public static string description {
+            get {
+                return ResourceManager.GetString("description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Email.
+        /// </summary>
+        public static string email {
+            get {
+                return ResourceManager.GetString("email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Photos : Une annonce avec photo est 7 fois plus consultée qu&apos;une annonce sans photo.
+        /// </summary>
+        public static string imageInfo {
+            get {
+                return ResourceManager.GetString("imageInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Localisation.
+        /// </summary>
+        public static string localisation {
+            get {
+                return ResourceManager.GetString("localisation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Location.
+        /// </summary>
+        public static string location {
+            get {
+                return ResourceManager.GetString("location", resourceCulture);
             }
         }
         
@@ -79,11 +223,173 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à OFFRES.
+        /// </summary>
+        public static string offres {
+            get {
+                return ResourceManager.GetString("offres", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Prix.
+        /// </summary>
+        public static string prix {
+            get {
+                return ResourceManager.GetString("prix", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Pseudo.
+        /// </summary>
+        public static string pseudo {
+            get {
+                return ResourceManager.GetString("pseudo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Que recherchez-vous ?.
+        /// </summary>
+        public static string queCherchezVous {
+            get {
+                return ResourceManager.GetString("queCherchezVous", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à RECHERCHER.
+        /// </summary>
+        public static string rechercher {
+            get {
+                return ResourceManager.GetString("rechercher", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Région.
+        /// </summary>
+        public static string region {
+            get {
+                return ResourceManager.GetString("region", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Téléphone.
+        /// </summary>
+        public static string tel {
+            get {
+                return ResourceManager.GetString("tel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Texte de l&apos;annonce.
+        /// </summary>
+        public static string texteAnnonce {
+            get {
+                return ResourceManager.GetString("texteAnnonce", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Marssa.
         /// </summary>
         public static string title {
             get {
                 return ResourceManager.GetString("title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Titre de l&apos;annonce.
+        /// </summary>
+        public static string titreAnnonce {
+            get {
+                return ResourceManager.GetString("titreAnnonce", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Toutes les annonces.
+        /// </summary>
+        public static string toutesAnnonces {
+            get {
+                return ResourceManager.GetString("toutesAnnonces", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Toutes catégories.
+        /// </summary>
+        public static string toutesCategories {
+            get {
+                return ResourceManager.GetString("toutesCategories", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à MRO.
+        /// </summary>
+        public static string uniteMonnaie {
+            get {
+                return ResourceManager.GetString("uniteMonnaie", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Valider.
+        /// </summary>
+        public static string valider {
+            get {
+                return ResourceManager.GetString("valider", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Ville ou code postal.
+        /// </summary>
+        public static string villeCodePostal {
+            get {
+                return ResourceManager.GetString("villeCodePostal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Voie ou numéro + voie.
+        /// </summary>
+        public static string voie {
+            get {
+                return ResourceManager.GetString("voie", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Voitures.
+        /// </summary>
+        public static string voitures {
+            get {
+                return ResourceManager.GetString("voitures", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Vos infomations.
+        /// </summary>
+        public static string vosInformations {
+            get {
+                return ResourceManager.GetString("vosInformations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Votre annonce.
+        /// </summary>
+        public static string votre_annonce {
+            get {
+                return ResourceManager.GetString("votre-annonce", resourceCulture);
             }
         }
     }

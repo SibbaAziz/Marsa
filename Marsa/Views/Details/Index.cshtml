@@ -48,11 +48,11 @@
                 <div class="styles_adDetails__1qVAk">
                     <h3 class="title">@Model.Title</h3>
                     <div class="price-phone-container">
-                        <span class="price">@Model.Price MRU</span>
+                        <span class="price">@Model.Price @Resources.Strings.uniteMonnaie</span>
 
                     </div>
                 </div>
-                <span class="date">15/06/2020 à 15:04</span>
+                <span class="date">@Model.Date.ToString("dd/MM/yyyy à hh:mm")</span>
             </div>
         </div>
 
@@ -76,7 +76,7 @@
     </div>
 
     <div class="description">
-        <h3>Description</h3><div>
+        <h3>@Resources.Strings.description</h3><div>
             <div class="styles_Description__3Svyk" data-qa-id="adview_description_container">
                 <div class="description-container">
                     <span class="_1fFkI">

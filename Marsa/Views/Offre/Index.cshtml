@@ -7,19 +7,19 @@
 <div class="rechercher yesdesktop">
     @using (Html.BeginForm("Search", "Offre", FormMethod.Post, new { @class = "rechercher" }))
     {
-        <input class="recherche" type="text" name="search" value="@ViewBag.Search" placeholder="Que recherchez-vous? ">
-       
+        <input class="recherche" type="text" name="search" value="@ViewBag.Search" placeholder="@Resources.Strings.queCherchezVous">
+        
 
-        @Html.DropDownList("category", new SelectList(new string[] {"Toutes catégories", "Voitures", "Location", "Autre"}, ViewBag.Category), new {@class = "categorie"})
+        @Html.DropDownList("category", new SelectList(new string[] { Resources.Strings.toutesCategories ,Resources.Strings.voitures, Resources.Strings.location, Resources.Strings.autre }, ViewBag.Category), new {@class = "categorie"})
 
-        <button type="submit" name="button" value="submit">RECHERCHER</button>
+        <button type="submit" name="button" value="submit">@Resources.Strings.rechercher</button>
         @*<input type="checkbox" name="recherche" value="search"> <span>Recherche dans le titre uniquement</span>
         <input type="checkbox" name="recherche" value="search"> <span>Annonces urgentes uniquement</span>*@
         @Html.DropDownList("region", new SelectList(Marsa.Globals.Regions, ViewBag.Area), new { @class = "region" })
 
-        <input class="ville" type="text" name="code" placeholder="Commune">
+        <input class="ville" type="text" name="code" placeholder="@Resources.Strings.commune">
         <div class="container-slider">
-            <span >Prix</span>
+            <span >@Resources.Strings.prix</span>
             <div class="row shapes">
                 <div class="col-sm-12">
                     <div id="slider-range"></div>
@@ -50,7 +50,7 @@
 <div class="containeroffre">
     @*<h1>Annonces: Ile-de-France</h1>*@
     <aside class="annonces-a-la-une">
-        <h2>Annonces à la Une</h2>
+        <h2>@Resources.Strings.annoncesAlaUne</h2>
         @*<article>
             <a href="#">
                 <figure>
@@ -94,7 +94,7 @@
 
     <div class="galerie">
         <ul>
-            <li><span>Toutes les annonces</span></li>
+            <li><span>@Resources.Strings.toutesAnnonces</span></li>
             @*<li><span>Particuliers</span><span class="nomobile">4 299 276</span></li>
             <li><span>Professionnels</span><span class="nomobile">254 948</span></li>*@
         </ul>
@@ -110,7 +110,7 @@
                     <section>
                         <h3>@item.Title </h3>
                         <div class="offre-price">
-                            <span >@item.Price MRU</span><br />
+                            <span >@item.Price @Resources.Strings.uniteMonnaie</span><br />
                         </div>
                         
                                                     <div class="offre-bottom">

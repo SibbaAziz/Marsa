@@ -1,10 +1,12 @@
-﻿using Marsa.Models;
+﻿using Marsa.Localization;
+using Marsa.Models;
 using Newtonsoft.Json;
 using System.Web.Mvc;
 
 namespace Marsa.Controllers
 {
     [Marsa.Authorization.Authorize]
+    [OnStart]
     public class DetailsController : Controller
     {
         // GET: Details

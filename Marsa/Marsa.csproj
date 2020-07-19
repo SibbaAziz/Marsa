@@ -137,6 +137,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Globals.cs" />
+    <Compile Include="Localization\OnStart.cs" />
     <Compile Include="Migrations\202006161322565_InitialCreate.cs" />
     <Compile Include="Migrations\202006161322565_InitialCreate.designer.cs">
       <DependentUpon>202006161322565_InitialCreate.cs</DependentUpon>

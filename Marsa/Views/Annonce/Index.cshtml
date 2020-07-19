@@ -2,7 +2,7 @@
 @model Marsa.Core.Models.Annonce
 
 <div class="uneannonce">
-    <h1>Déposer une annonce</h1>
+    <h1>@Resources.Strings.deposerAnnonce</h1>
     <hr>
 
     @using (Html.BeginForm("Add", "Annonce", FormMethod.Post, new
@@ -14,63 +14,63 @@
     {
         <!-- ANNONCE TOP-->
 <section class="anntop">
-    <h2>Votre annonce</h2>
+    <h2>@Resources.Strings.votre_annonce</h2>
 
 
-    <label for="categorie">Catégorie *</label>
+    <label for="categorie">@Resources.Strings.categorie *</label>
     @{
         List<SelectListItem> categories = new List<SelectListItem>();
         categories.Add(new SelectListItem
         {
-            Text = "Voitures",
+            Text = Resources.Strings.voitures,
             Value = "Voitures"
         });
         categories.Add(new SelectListItem
         {
-            Text = "Location",
+            Text = Resources.Strings.location,
             Value = "Location",
             Selected = true
         });
         categories.Add(new SelectListItem
         {
-            Text = "Autre",
+            Text = Resources.Strings.autre,
             Value = "Autre"
         });
     }
 
-    @Html.DropDownListFor(model => model.Category, categories, "Choisissez une catégorie")
+    @Html.DropDownListFor(model => model.Category, categories, Resources.Strings.choisissezVotreCategorie)
   
 
-    <label for="particulier">Vous êtes un *</label>
+    @*<label for="particulier">Vous êtes un *</label>
     <input type="radio" name="particulier" id="particulier" /> Particulier
     <input type="radio" name="particulier" /> Professionnel
 
     <label for="demande">Type d'annonce *</label>
     <input type="radio" id="demande" name="demande" /> Offres
-    <input type="radio" value="demande" name="demande" /> Demandes
+    <input type="radio" value="demande" name="demande" /> Demandes*@
 
 
 
-    <label for="titre">Titre de l'annonce *</label>
+    <label for="titre">@Resources.Strings.titreAnnonce *</label>
     @Html.TextBoxFor(m => m.Title, new { @class = "cellule" })
 
-    <label for="texte">Texte de l'annonce *</label>
+    <label for="texte">@Resources.Strings.texteAnnonce *</label>
     @Html.TextAreaFor(m => m.Description, new { @rows = 8, @cols = 30 })
 
 
-    <label for="prix">Prix</label>
-    @Html.TextBoxFor(m => m.Price, new { @placeholder = "MRU", @class = "cellule" })
+    <label for="prix">@Resources.Strings.prix</label>
+    @Html.TextBoxFor(m => m.Price, new { @placeholder = Resources.Strings.uniteMonnaie, @class = "cellule" })
 
 
-    <p>Photos : Une annonce avec photo est 7 fois plus consultée qu'une annonce sans photo</p>
+    <p>@Resources.Strings.imageInfo</p>
 
 
     <label style="margin-bottom:10px">
         <input type="file" multiple class="hidden-accessible   js-file-input" name="file">
         <span class="button">
-            Ajouter des images
+            @Resources.Strings.ajouterPhotos
         </span>
-        <span class="js-file-input-display">Aucun fichier sélectionné.</span>
+        <span class="js-file-input-display">@Resources.Strings.aucunFichierSelectionne</span>
     </label>
 
 
@@ -78,30 +78,30 @@
         <!-- ANNONCE TOP-->
         <!-- ANNONCE MIDDLE -->
 <section class="annmiddle">
-    <h2>Localisation</h2>
+    <h2>@Resources.Strings.localisation</h2>
 
-    <label for="region">Region *</label>
-    @Html.DropDownListFor(model => model.Region, new SelectList(Globals.Regions), "Choisissez une catégorie")
+    <label for="region">@Resources.Strings.region *</label>
+    @Html.DropDownListFor(model => model.Region, new SelectList(Globals.Regions), Resources.Strings.choisissezRegion)
 
-    <label for="ville">Ville ou code postal *</label>
+    <label for="ville">@Resources.Strings.villeCodePostal *</label>
     <div class="cible">
         @Html.TextBoxFor(m => m.City, new { @class = "cellule positablette" })
     </div>
 
 
-    <label for="adresse">Adresse</label>
-    @Html.TextBoxFor(m => m.Address, new { @class = "cellule positablette2", placeholder = "Voie ou numéro + voie" })
+    <label for="adresse">@Resources.Strings.adresse</label>
+    @Html.TextBoxFor(m => m.Address, new { @class = "cellule positablette2", placeholder = Resources.Strings.voie })
 
 </section>
         <!-- ANNONCE MIDDLE -->
         <!-- ANNONCE BOTTOM -->
         <section class="annbottom">
-            <h2>Vos infomations</h2>
-            <label for="pseudo">Pseudo *</label>
+            <h2>@Resources.Strings.vosInformations</h2>
+            <label for="pseudo">@Resources.Strings.pseudo *</label>
             @Html.TextBoxFor(m => m.Pseudo, new { @class="cellule"})
-            <label for="email">Email *</label>
+            <label for="email">@Resources.Strings.email *</label>
             @Html.TextBoxFor(m => m.Email, new { @class="cellule" })
-            <label for="téléphone">Téléphone *</label>
+            <label for="téléphone">@Resources.Strings.tel *</label>
             @Html.TextBoxFor(m => m.PhoneNumber, new { @class="cellule", type="tel" })
             @*<input class="check" type="checkbox" name="telephone">
             <p>Masquer le numéro de téléphone dans l'annonce.</p>
@@ -111,9 +111,9 @@
         <!-- ANNONCE BOTTOM -->
 
 
-        <p class="champs">Champs obligatoires *</p>
+        <p class="champs">@Resources.Strings.champsObligatoires *</p>
         <div class="validation-container">
-            <button class="validerbutton" type="submit" name="button">Valider</button>
+            <button class="validerbutton" type="submit" name="button">@Resources.Strings.valider</button>
         </div>
         
     }

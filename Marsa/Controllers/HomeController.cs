@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Marsa.Localization;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -8,7 +9,7 @@ using System.Web.Mvc;
 
 namespace Marsa.Controllers
 {
-    
+    [OnStart]
     public class HomeController : Controller
     {
         public ActionResult Register()
@@ -39,9 +40,8 @@ namespace Marsa.Controllers
 
         public ActionResult SetLanguage(string language)
         {
-            
-
-            if(language == "auto")
+            Session["language"] = language;
+            if (string.IsNullOrEmpty(language) || language == "auto")
             {
                 System.Threading.Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
                 System.Threading.Thread.CurrentThread.CurrentUICulture = CultureInfo.InstalledUICulture;
@@ -53,7 +53,6 @@ namespace Marsa.Controllers
                 System.Threading.Thread.CurrentThread.CurrentUICulture = ar;
 
             }
-
             return View("Index");
         }
 

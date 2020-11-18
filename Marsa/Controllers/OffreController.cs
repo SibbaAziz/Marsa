@@ -20,7 +20,7 @@ namespace Marsa.Controllers
             //db.Annonces.ToList();
             ViewBag.MinPrice = 500000;
             ViewBag.MaxPrice = 1000000;
-            return View(db.Annonces.Select(a => new AnnonceModel()
+            return View(db.Annonces.Where(a => a.IsValidated).Select(a => new AnnonceModel()
             {
                 Id = a.Id,
                 Photos = a.Photos,
@@ -40,7 +40,7 @@ namespace Marsa.Controllers
             ViewBag.Area = area;
             ViewBag.MinPrice = 500000;
             ViewBag.MaxPrice = 1000000;
-            return View("Index", db.Annonces.Where(a => a.City == area)
+            return View("Index", db.Annonces.Where(a => a.City == area && a.IsValidated)
                                         .Select(a => new AnnonceModel()
             {
                 Id = a.Id,
@@ -72,7 +72,8 @@ namespace Marsa.Controllers
             var result = db.Annonces.Where(a => a.Title.Contains(search) &&
                                                  (a.Region == region || a.City == region ) &&
                                                  a.Price >= minprice &&
-                                                 a.Price <= maxprice);
+                                                 a.Price <= maxprice &&
+                                                 a.IsValidated);
 
             if(translateCategory != "Toutes catégories")
             {

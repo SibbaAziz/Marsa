@@ -188,6 +188,7 @@
     <Content Include="Content\image-viewer.css" />
     <Content Include="Content\normalize.css" />
     <Content Include="Content\slider.css" />
+    <Content Include="Content\tiles.css" />
     <Content Include="Content\tooltip.css" />
     <Content Include="favicon.ico" />
     <Content Include="favicon.png" />
@@ -199,10 +200,13 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="img\.gitignore" />
+    <Content Include="img\baseline_expand_less_black_18dp.png" />
+    <Content Include="img\baseline_expand_more_black_18dp.png" />
     <Content Include="img\baseline_location_on_black_18dp.png" />
     <Content Include="img\baseline_menu_black_18dp.png" />
     <Content Include="img\baseline_phone_black_18dp.png" />
     <Content Include="img\carte.png" />
+    <Content Include="img\location.jpg" />
     <Content Include="img\logo.png" />
     <Content Include="img\LogoMakr.png" />
     <Content Include="img\LogoMakr_0ukRKr.png" />
@@ -214,11 +218,13 @@
     <Content Include="img\mauritania.svg" />
     <Content Include="img\mauritaniaHigh.svg" />
     <Content Include="img\mobilepic.png" />
+    <Content Include="img\montres.jpg" />
     <Content Include="img\photo2.png" />
     <Content Include="img\photo3.png" />
     <Content Include="img\photoprincipale.png" />
     <Content Include="img\photosupp.png" />
     <Content Include="img\photosuppmobile.png" />
+    <Content Include="img\voitures.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="img\.DS_Store" />
